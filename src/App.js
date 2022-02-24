@@ -1,20 +1,46 @@
-import logo from './logo.svg';
+
 import './App.css';
-import {BrowserRouter , Route, Routes} from 'react-router-dom';
+import {BrowserRouter as Router , Route, Switch} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-import Page1 from "./pages/page1"
 
+
+import Modifier from "./pages/modifier";
+import Ajouter from "./pages/ajouter";
+import { Nav } from 'react-bootstrap';
 
 
  
   function App(){
     return(
-    <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Page1 />} />
+   <Router>
+     <div>
+          <Nav fill variant="tabs" defaultActiveKey="/home">
+  <Nav.Item>
+    <Nav.Link as={Link} to={"/ajouter"} >ajouter un plat</Nav.Link>
+  </Nav.Item>
+  <Nav.Item>
+    <Nav.Link as={Link} to={"/modifier"} >modifier un plat</Nav.Link>
+  </Nav.Item>
+  <Nav.Item>
+    <Nav.Link eventKey="link-2">nos plats</Nav.Link>
+  </Nav.Item>
+  <Nav.Item>
+    <Nav.Link eventKey="disabled" disabled>
+      Disabled
+    </Nav.Link>
+  </Nav.Item>
+</Nav>
+          </div>
+
+      <div>
+      <Switch>
+      <Route path="/ajouter" component={Ajouter}/>
+       <Route path="/modifier" component={Modifier}/>
+       </Switch>
+       </div>
       
-    </Routes>
-  </BrowserRouter>
+   </Router>
  
       );
     }
