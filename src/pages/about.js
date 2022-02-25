@@ -16,7 +16,8 @@ import { Component } from "react";
 import logo from '../logo.png'
 import chef from '../chef.png'
 import bg from '../bg.jpg'
-class home extends Component{
+
+class about extends Component{
     render(){
   return (
     <>
@@ -62,4 +63,4 @@ class home extends Component{
   );
 }
 }
-export default home;
+export default about;
