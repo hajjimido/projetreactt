@@ -16,6 +16,7 @@ import { Component } from "react";
 import logo from '../logo.png'
 import chef from '../chef.png'
 import bg from '../bg.jpg'
+
 class home extends Component{
     render(){
   return (
