@@ -6,17 +6,19 @@ import "./App.css"
 import { Nav } from 'react-bootstrap';
 
 import Home from "./pages/home";
+import Restaurants from "./pages/Restaurants";
 
+import logo from './logo.png'
 
-
-
- 
   function App(){
     return(
-   <Router>
+      <div>
+         <Router>
    <div>
    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Resto</a>
+  <a class="navbar-brand" href="#">
+      <span class="logoStyle">Resto</span>
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -35,18 +37,19 @@ import Home from "./pages/home";
     
   </div>
 </nav>
-          </div>
+</div>
 
-      <div>
-      <Switch>
-      <Route path="/home" component={Home}/>
-      <Route path="/home" component={Home}/>
-       
-       </Switch>
-       </div>
-      
-   </Router>
+<div>
+<Switch>
+<Route path="/home" component={Home}/>
+<Route path="/home" component={Home}/>
+ 
+ </Switch>
+ </div>
 
+</Router>
+<Restaurants/>
+      </div>
  
       );
     }
