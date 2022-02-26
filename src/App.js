@@ -7,7 +7,7 @@ import { Nav } from 'react-bootstrap';
 
 import Home from "./pages/home";
 import About from "./pages/about"
-
+import Restaurants from './pages/Restaurants';
 
 
 
@@ -30,7 +30,7 @@ import About from "./pages/about"
         <Nav.Link as={Link} to={"/About"} type="button">About</Nav.Link>
       </li>
       <li class="nav-item">
-        <Nav.Link as={Link} to={"/home"}>Menu</Nav.Link>
+        <Nav.Link as={Link} to={"/restaurants"}>restaurants</Nav.Link>
       </li>
     </ul>
     
@@ -42,6 +42,7 @@ import About from "./pages/about"
       <Switch>
       <Route path="/home" component={Home}/>
       <Route path="/about" component={About}/>
+      <Route path="/restaurants" component={Restaurants}/>
        
        </Switch>
        </div>

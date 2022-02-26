@@ -8,56 +8,73 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import "./styles.css";
+import "./styleshome.css";
 
 // import required modules
 import { EffectFade, Navigation, Pagination } from "swiper";
 import { Component } from "react";
-import logo from '../logo.png'
-import chef from '../chef.png'
-import bg from '../bg.jpg'
+import Noodles from './noodles.png'
+import Pizza from './pizza.png'
+import Chicken from './chicken.png'
+
+const data=[
+  {
+    id:1,
+    name:'Fried Chiken',
+    logo:Chicken
+  },
+  {
+    id:2,
+    name:'Spicy Noodles',
+    logo:Noodles
+  },
+  {
+    id:3,
+    name:'Pizza',
+    logo:Pizza
+  }
+
+]
 
 class home extends Component{
     render(){
   return (
     <>
-      <Swiper
-        spaceBetween={30}
+      <Swiper  
+        spaceBetween={20}
         effect={"fade"}
         navigation={true}
         pagination={{
           clickable: true,
         }}
-        modules={[EffectFade, Navigation, Pagination]}
-        className="mySwiper"
+        scrollbar={{draggable:true}}
+        modules={[ Navigation, Pagination]}
+        
+        onSlideChange={()=> console.log('slide change')}
+        onSwiper={swiper =>console.log(swiper)}
       >
-        <SwiperSlide>
+        {data.map(user => (
+        <SwiperSlide key={user.id} className="slide"  >
         <div class="container">
                          
         <div class="row gx-3">
         <div class="row gy-5">
-        <div class="col-lg-5">
-        <img src={logo} class="img-fluid" alt=""/>
-         </div>
+        
         <div class="col-lg-7">
-        <h1 >Our Special Dish</h1>
-            <h1>Spicy Noodles</h1>
+        <h1 class="dish">Our Special Dish</h1>
+            <h1>{user.name}</h1>
             <button>Order Now</button>
             </div>
+            <div class="col-lg-5">
+        <img src={user.logo} class="img-fluid" alt=""/>
+         </div>
             </div>
             </div>
             </div>
               
         </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </SwiperSlide>
+        ))}
+       
       </Swiper>
     </>
   );
