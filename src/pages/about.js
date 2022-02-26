@@ -1,66 +1,89 @@
-import React, { useRef, useState } from "react";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/effect-fade";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
-import "./styles.css";
-
-// import required modules
-import { EffectFade, Navigation, Pagination } from "swiper";
 import { Component } from "react";
-import logo from '../logo.png'
-import chef from '../chef.png'
-import bg from '../bg.jpg'
+import SimpleReactFooter from "simple-react-footer";
 
 class about extends Component{
-    render(){
-  return (
-    <>
-      <Swiper
-        spaceBetween={30}
-        effect={"fade"}
-        navigation={true}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[EffectFade, Navigation, Pagination]}
-        className="mySwiper"
-      >
-        <SwiperSlide>
-        <div class="container">
-                         
-        <div class="row gx-3">
-        <div class="row gy-5">
-        <div class="col-lg-5">
-        <img src={logo} class="img-fluid" alt=""/>
-         </div>
-        <div class="col-lg-7">
-        <h1 >Our Special Dish</h1>
-            <h1>Spicy Noodles</h1>
-            <button>Order Now</button>
-            </div>
-            </div>
-            </div>
-            </div>
-              
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </SwiperSlide>
-      </Swiper>
-    </>
-  );
-}
+render() {
+  const description = "If you want to revert the last commit just do git revert <unwanted commit hash> ; then you can push this new commit, which undid your previous commit.";
+  const title = "EnsaFood";
+  const columns = [
+    {
+        
+        resources: [
+            {
+              name: "Resources",
+              link: "/about"
+            },
+            {
+                name: "About",
+                link: "/about"
+            },
+            {
+                name: "Careers",
+                link: "/about"
+            },
+            {
+                name: "Contact",
+                link: "/about"
+            },
+            {
+                name: "Admin",
+                link: "about"
+            }
+        ]
+    },
+    {
+       
+        resources: [
+            {
+              name: "Legal",
+              link: "/about"
+
+            },
+            {
+                name: "Privacy",
+                link: "/about"
+            },
+            {
+                name: "Terms",
+                link: "/about"
+            }
+        ]
+    },
+    {
+        
+        resources: [
+             {
+              name: "Visit",
+              link: "/about"
+
+             },
+            {
+                name: "Locations",
+                link: "/about"
+            },
+            {
+                name: "Culture",
+                link: "/about"
+            }
+        ]
+    }
+ ];
+ return <SimpleReactFooter 
+    description={description} 
+    title={title}
+    columns={columns}
+    linkedin="fluffy_cat_on_linkedin"
+    facebook="fluffy_cat_on_fb"
+    twitter="fluffy_cat_on_twitter"
+    instagram="fluffy_cat_live"
+    youtube="UCFt6TSF464J8K82xeA?"
+    pinterest="fluffy_cats_collections"
+    copyright="white"
+    iconColor="white"
+    backgroundColor="black"
+    fontColor="white"
+    copyrightColor="darkgrey"
+ />;
+};
 }
 export default about;

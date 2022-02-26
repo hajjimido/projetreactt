@@ -6,6 +6,7 @@ import "./App.css"
 import { Nav } from 'react-bootstrap';
 
 import Home from "./pages/home";
+import About from "./pages/about"
 
 
 
@@ -40,7 +41,7 @@ import Home from "./pages/home";
       <div>
       <Switch>
       <Route path="/home" component={Home}/>
-      <Route path="/home" component={Home}/>
+      <Route path="/about" component={About}/>
        
        </Switch>
        </div>
