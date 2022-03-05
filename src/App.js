@@ -1,54 +1,35 @@
 
-import './App.css';
 import {BrowserRouter as Router , Route, Switch} from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import "./App.css"
-import { Nav } from 'react-bootstrap';
 
 import Home from "./pages/home";
 import About from "./pages/about"
 import Restaurants from './pages/Restaurants';
-
-
-
+import Navbar from './pages/navbar';
+import Order from './pages/Order/index'
+// import Signin from './pages/login.component';
+// import Signup from './pages/signup.component';
  
   function App(){
     return(
+      <>
    <Router>
-   <div>
-   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Resto</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <Nav.Link as={Link} to={"/home"}>Home </Nav.Link>
-      </li>
-      <li class="nav-item">
-        <Nav.Link as={Link} to={"/About"} type="button">About</Nav.Link>
-      </li>
-      <li class="nav-item">
-        <Nav.Link as={Link} to={"/restaurants"}>restaurants</Nav.Link>
-      </li>
-    </ul>
-    
-  </div>
-</nav>
-          </div>
+   <Navbar/>
 
-      <div>
+   <div className="pages">
       <Switch>
+      <Route exact path="/" component={Home}/>
       <Route path="/home" component={Home}/>
       <Route path="/about" component={About}/>
       <Route path="/restaurants" component={Restaurants}/>
-       
-       </Switch>
+      <Route path="/order" component={Order}/>
+      {/* <Route path="/Sign-in" component={Signin}/>
+      <Route path="/Sign-up" component={Signup}/>
+      <Route path="/partners" component={Home}/> */}
+      </Switch>
        </div>
       
    </Router>
-
+</>
  
       );
     }

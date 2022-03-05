@@ -23,18 +23,20 @@
   }
   
   .box-title{
-    background-color: rgb(212, 143, 14);;
-    text-align: center;
-    bottom:20px;
-    font-size:14pt;
-    height:40px;
-    color:white;
-    transition: 0.5s;
-    border-top-left-radius:10px;
-    border-top-right-radius: 10px; 
-    box-sizing: border-box;
-    position: relative;
-  
+      background-color: rgb(212, 143, 14);;
+      text-align: center;
+      bottom:20px;
+      right:20px;
+      width: 100%;
+      font-size:14pt;
+      height:40px;
+      color:white;
+      transition: 0.5s;
+      border-top-left-radius:10px;
+      border-top-right-radius: 10px; 
+      box-sizing: border-box;
+      position: relative;
+ 
   }
   
   .box:hover{
