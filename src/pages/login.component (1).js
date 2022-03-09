@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import logo from '../logo.png';
-import Resto from "./resto"
+
 import { useHistory } from "react-router-dom";
-import "../styleprojet.css"
+
 function Login(props) {
     
 const history = useHistory();
@@ -13,7 +13,7 @@ const history = useHistory();
         return (
             <div class="row">
     <div class="col">
-    <img src={logo} alt="Logo" className="logo"/> 
+    <img src={logo} alt="Logo" className="img-fluid"/> 
     </div>
     <div class="col">
             <form>

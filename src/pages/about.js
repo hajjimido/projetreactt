@@ -69,20 +69,20 @@ render() {
     }
  ];
  return <SimpleReactFooter 
-    description={description} 
-    title={title}
-    columns={columns}
-    linkedin="fluffy_cat_on_linkedin"
-    facebook="fluffy_cat_on_fb"
-    twitter="fluffy_cat_on_twitter"
-    instagram="fluffy_cat_live"
-    youtube="UCFt6TSF464J8K82xeA?"
-    pinterest="fluffy_cats_collections"
-    copyright="white"
-    iconColor="white"
-    backgroundColor="black"
-    fontColor="white"
-    copyrightColor="darkgrey"
+ description={description} 
+ title={title}
+ columns={columns}
+ linkedin="fluffy_cat_on_linkedin"
+ facebook="fluffy_cat_on_fb"
+ twitter="fluffy_cat_on_twitter"
+ instagram="fluffy_cat_live"
+ youtube="UCFt6TSF464J8K82xeA?"
+ pinterest="fluffy_cats_collections"
+ copyright="white"
+ iconColor="white"
+ backgroundColor="#253f58"
+ fontColor="white"
+ copyrightColor="darkgrey"
  />;
 };
 }
