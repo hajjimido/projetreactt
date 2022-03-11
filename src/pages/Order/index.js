@@ -1,21 +1,41 @@
-import { Grid } from '@mui/material';
-import React, { Component } from 'react';
-import OrderForm from './OrderForm';
-
-
-const OrderNumberGenerator=()=>Math.floor(100000+Math.random()*900000).toString();
-
-
+import { Component } from "react";
+import react from 'react'
+import { MDBTable, MDBTableBody, MDBTableHead } from 'mdb-react-ui-kit';
 class Order extends Component{
     render(){
-    return (
-        <Grid container >
-            <Grid item xs={12}>
-                <OrderForm/>
-                <hr ></hr>
-            </Grid>
-        </Grid>
-    )
-}
+       
+        const data=this.props.location.state;
+       
+        return(
+            
+            <MDBTable striped>
+      <MDBTableHead>
+        <tr>
+          <th scope='col'>menu</th>
+          <th scope='col'>about</th>
+          
+        </tr>
+      </MDBTableHead>
+      <MDBTableBody>
+        <tr>
+          <th scope='row'>prix</th>
+          <td>{data[0].name}</td>
+          
+        </tr>
+        <tr>
+          <th scope='row'>paiment</th>
+          <td>cash</td>
+          
+        </tr>
+        <tr>
+          <th scope='row'>cliker sur</th>
+          <td colSpan={2}><button>commander</button></td>
+          
+        </tr>
+      </MDBTableBody>
+    </MDBTable>
+        )
+    }
+
 }
 export default Order;

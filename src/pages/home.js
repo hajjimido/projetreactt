@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import axios from 'axios'
+import {Link} from 'react-router-dom'
+
 
 // Import Swiper styles
 import "swiper/css";
@@ -15,7 +17,11 @@ import "./styleshome.css";
 import { EffectFade, Navigation, Pagination } from "swiper";
 import { Component } from "react";
 
-
+var data=[
+{
+  name:"hhh"
+}
+]
 
 
 class home extends Component{
@@ -34,7 +40,7 @@ class home extends Component{
 
 
 handleClick =(o) =>{
- alert (o.logo)
+ data[0].name=o.logo;
 }
 
 
@@ -79,9 +85,11 @@ saveStudent = async () => {
         <div class="col-lg-7">
         <h1 class="dish">Our Special Dish</h1>
             <h1>{user.path}</h1>
-            <a href="/order">
+            <Link to={{
+              pathname:"/order",
+              state:data }}>
              <button onClick={()=>this.handleClick(user)}>Order Now</button>
-            </a>
+            </Link>
             </div>
             <div class="col-lg-5">
         <img src={user.logo} class="img-fluid" alt=""/>
