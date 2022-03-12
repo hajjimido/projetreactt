@@ -1,7 +1,7 @@
 import { Component } from "react";
 import SimpleReactFooter from "simple-react-footer";
 
-class about extends Component{
+class footer extends Component{
 render() {
   const description = "If you want to revert the last commit just do git revert <unwanted commit hash> ; then you can push this new commit, which undid your previous commit.";
   const title = "EnsaFood";
@@ -86,4 +86,4 @@ render() {
  />;
 };
 }
-export default about;
+export default footer;

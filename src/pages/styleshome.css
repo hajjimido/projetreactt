@@ -6,8 +6,7 @@ body {
 }
 
 body {
-  background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: cursive;
   font-size: 14px;
   color: #000;
   margin: 0;
@@ -15,8 +14,9 @@ body {
 }
 
 .swiper {
-  width: 120vh;
-  height: 70vh;
+  margin-top:50px;
+  width: 180vh;
+  height: 80vh;
 }
 
 .swiper-slide {
@@ -42,9 +42,15 @@ h1{
 button{
   margin-left: 100px;
   font-size: 20px;
-  background-color: #000;
+  background-color:#253f58;
   color: white;
   margin-top: 10px;
+  border:none;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius:15px;
 }
 h1{
   margin-left:  20px;
@@ -52,5 +58,6 @@ h1{
 }
 .dish{
   font-size: 20px;
-  color:green;
+  color:#fec748;
+  font-weight: bold;
 }

@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 12px;
+  font-size: 1rem;
   position: sticky;
   top: 0;
   z-index: 20;
@@ -58,6 +58,15 @@
   width: 0;
   background: transparent;
   transition: width 0.7s ease, background-color 0.5s ease;
+  
+}
+.nav-item{
+  cursor: pointer;
+}
+.btn1:hover{
+  border-width: 2px;
+  background-color: #253f58;
+  
 }
 
 .nav-item:hover:after {
@@ -121,8 +130,9 @@
 
 .btn1{
   color: #fff;
-  border: 1px solid #4d81b3;
-  background-color: #4d81b3;
+  border: 1px solid #fec748;
+  background-color: #fec748;
   border-radius:8px;
+  font-weight: bold;
 }
 
