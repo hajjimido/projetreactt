@@ -1,6 +1,9 @@
 import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import axios from 'axios'
+import {Link} from 'react-router-dom'
+
 
 // Import Swiper styles
 import "swiper/css";
@@ -8,59 +11,106 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import "./styles.css";
+import "./styleshome.css";
 
 // import required modules
 import { EffectFade, Navigation, Pagination } from "swiper";
 import { Component } from "react";
-import logo from '../logo.png'
-import chef from '../chef.png'
-import bg from '../bg.jpg'
+
+var data=[
+{
+  name:"hhh"
+}
+]
+
 
 class home extends Component{
+ 
+  constructor(props){
+    
+    super(props);
+    this.state={
+        logo:[],
+    }
+    
+  }
+    
+
+  
+
+
+handleClick =(o) =>{
+ data[0].name=o.logo;
+}
+
+
+
+componentDidMount(){
+    this.saveStudent();
+}
+
+
+
+saveStudent = async () => {
+    const res= await axios.get('/gethome');
+    this.setState({
+        logo:res.data,
+    })
+   
+}
+
     render(){
   return (
     <>
-      <Swiper
-        spaceBetween={30}
+      <Swiper  
+        spaceBetween={20}
         effect={"fade"}
         navigation={true}
         pagination={{
           clickable: true,
         }}
-        modules={[EffectFade, Navigation, Pagination]}
-        className="mySwiper"
+        scrollbar={{draggable:true}}
+        modules={[ Navigation, Pagination]}
+        
+        onSlideChange={()=> console.log('slide change')}
+        onSwiper={swiper =>console.log(swiper)}
       >
-        <SwiperSlide>
+        {this.state.logo.map(user => (
+        <SwiperSlide key={user.id} className="slide"  >
         <div class="container">
                          
         <div class="row gx-3">
         <div class="row gy-5">
-        <div class="col-lg-5">
-        <img src={logo} class="img-fluid" alt=""/>
-         </div>
+        
         <div class="col-lg-7">
-        <h1 >Our Special Dish</h1>
-            <h1>Spicy Noodles</h1>
-            <button>Order Now</button>
+        <h1 class="dish">Our Special Dish</h1>
+            <h1>{user.path}</h1>
+            <Link to={{
+              pathname:"/order",
+              state:data }}>
+             <button onClick={()=>this.handleClick(user)}>Order Now</button>
+            </Link>
             </div>
+            <div class="col-lg-5">
+        <img src={user.logo} class="img-fluid" alt=""/>
+         </div>
             </div>
             </div>
             </div>
               
         </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </SwiperSlide>
+        ))}
+       
       </Swiper>
     </>
   );
+
+
 }
 }
+
+
 export default home;
+
+
+

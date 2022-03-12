@@ -1,0 +1,25 @@
+#About,#Partners{
+    min-height:50vh;
+    background-color:#ffffff;
+}
+
+.img,.img22{
+    height:400px;
+}
+.heading{
+    text-align: center;
+    color:#000066;
+    margin-top:5%;
+}
+
+.title{
+    color: #000066;
+}
+textarea {
+	resize: none;
+}
+
+.par{
+    color: #fec748;
+    font-weight: bold;
+}

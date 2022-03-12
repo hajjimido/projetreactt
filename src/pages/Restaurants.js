@@ -1,14 +1,34 @@
-import React from "react";
-import "./styles.css";
+import React,{useState} from "react";
+import "./stylerestau.css";
+import axios from 'axios';
 import { Component } from "react";
-import img1 from './images/img1.jpg';
-import img2 from './images/img2.jpg';
-import img3 from './images/img3.jpg';
-import img4 from './images/img4.jpg';
+
 
 
 class Restaurants extends Component{
-    render(){
+    
+    constructor(props){
+        super(props);
+        this.state={
+            photo:[],
+        }
+    }
+
+    componentDidMount(){
+        this.saveStudent();
+    }
+    
+  
+    
+    saveStudent = async () => {
+        const res= await axios.get('/get');
+        this.setState({
+            photo:res.data,
+        })
+       
+    }
+
+    render() {
   return (
     <>
     <div id="Restaurant">
@@ -17,23 +37,18 @@ class Restaurants extends Component{
             <p>choose the restaurant you want to order from !</p>
          </div>
         <div className="container">
+        <div class="row">
+
+
+           {this.state.photo.map(a =>(
+               <div class="col-sm">
             <div className="box">
-                <img  src={img1} alt="" className="img1"/>
+                <img  src={a.photos} alt="" className="img1"/>
                 <h1 className="box-title">restaurant1</h1>   
             </div>
-
-            <div className="box">
-                <img  src={img2} alt="" className="img1"/>    
-                <h1 className="box-title">restaurant2</h1>      
             </div>
-            <div className="box">
-                <img  src={img3} alt="" className="img1"/>
-                <h1 className="box-title">restaurant3</h1>
-            </div>
-            <div className="box">
-                <img  src={img4} alt="" className="img1"/>
-                <h1 className="box-title">restaurant4</h1>
-            </div>      
+           ))}  
+           </div>     
         </div>
     </div>
 
