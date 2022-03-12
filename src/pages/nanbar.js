@@ -1,6 +1,6 @@
 import { useState } from "react";
 import {BrowserRouter as Router , Route, Switch} from 'react-router-dom';
-import { NavLink  } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import "./Navbar.css";
 import { Link } from 'react-scroll';
 
@@ -11,7 +11,7 @@ import Partners from "./Partners";
 
 import Restaurants from './Restaurants';
 
-  function App(){
+  function Nav(){
     const [click, setClick] = useState(false);
 
     const handleClick = () => setClick(!click);
@@ -90,15 +90,17 @@ import Restaurants from './Restaurants';
           </NavLink>
         </li>
         <li className="nav-item">
+      
           <NavLink
-            exact
-            to="/Sign-up"
+           exact
+           to="/Sign-up"
             activeClassName="active"
             className="nav-links btn1"
             onClick={handleClick}
           >
             Sign Up
           </NavLink>
+         
         </li>
       </ul>
       <div className="nav-icon" onClick={handleClick}>
@@ -128,6 +130,6 @@ import Restaurants from './Restaurants';
       );
     }
 
-export default App;
+export default Nav;
 
 /*  <Nav.Link as={Link} to={"/restaurants"}>restaurants</Nav.Link>*/
