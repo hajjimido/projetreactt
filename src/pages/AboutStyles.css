@@ -1,15 +1,11 @@
 #About,#Partners{
-    min-height:50vh;
-    background-color:#ffffff;
+    min-height:80vh;
+    background-color:white;
+    
 }
 
 .img,.img22{
     height:400px;
-}
-.heading{
-    text-align: center;
-    color:#000066;
-    margin-top:5%;
 }
 
 .title{
@@ -23,3 +19,5 @@ textarea {
     color: #fec748;
     font-weight: bold;
 }
+
+

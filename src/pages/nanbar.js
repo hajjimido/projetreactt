@@ -3,12 +3,10 @@ import {BrowserRouter as Router , Route, Switch} from 'react-router-dom';
 import { NavLink} from "react-router-dom";
 import "./Navbar.css";
 import { Link } from 'react-scroll';
-
 import Home from "./home";
-import About from "./about";
+import Footer from "./footer";
 import Aboutus from "./aboutus";
 import Partners from "./Partners";
-
 import Restaurants from './Restaurants';
 
   function Nav(){
@@ -39,20 +37,6 @@ import Restaurants from './Restaurants';
        </Link>
         </li>
         <li className="nav-item">
-        <Link as={Link}
-        to='Restaurants'
-      
-       className='nav-links'
-       activeClassName="active"
-       spy={true}
-       smooth={true}
-       offset={-70}
-       duration={10}>
-          Restaurants
-          
-       </Link>
-        </li>
-        <li className="nav-item">
           
         <Link as={Link}
         to='About'
@@ -67,6 +51,21 @@ import Restaurants from './Restaurants';
         </li>
         <li className="nav-item">
         <Link as={Link}
+        to='Restaurants'
+      
+       className='nav-links'
+       activeClassName="active"
+       spy={true}
+       smooth={true}
+       offset={-70}
+       duration={10}>
+          Restaurants
+          
+       </Link>
+        </li>
+        
+        <li className="nav-item">
+        <Link as={Link}
        to='Partners'
        className='nav-links'
        activeClassName="active"
@@ -77,7 +76,7 @@ import Restaurants from './Restaurants';
           Partners
        </Link>
         </li>
-        <li className="nav-item">
+        <li className="nav-item-btn">
          
           <NavLink
             exact
@@ -114,16 +113,18 @@ import Restaurants from './Restaurants';
    <div id="Home">
        <Home/>
    </div>
-   <div id="Restaurants" >
+    <div id="Aboutus">
+      <Aboutus/> 
+    </div>
+    <div id="Restaurants" >
       <Restaurants/>
-    </div>  
-    <div id="Aboutus"><Aboutus/> </div>
-    <div id="Partners"><Partners/> </div>
-    <div><About/> </div>
-    
- 
-    
-     
+    </div> 
+    <div id="Partners">
+      <Partners/> 
+    </div>
+    <div>
+      <Footer/> 
+    </div>
       </div>
       
  
@@ -132,4 +133,3 @@ import Restaurants from './Restaurants';
 
 export default Nav;
 
-/*  <Nav.Link as={Link} to={"/restaurants"}>restaurants</Nav.Link>*/

@@ -1,13 +1,13 @@
 import React from 'react';
-import logo from '../chef.png';
+import logo from '../logo.png';
 import "./AboutStyles.css";
 
 function aboutus() {
   return (
     <div id="About">        
-        <div className="heading">
-            <h1>About us</h1> 
-            <p className="par">Lorem ipsum dolor sit amet, consectetur adip</p>
+        <div className="Res-heading">
+          <h1>About us</h1> 
+          <p classNamee="par">Lorem ipsum dolor sit amet, consectetur adip</p>
         </div>
         <div className="container">
             <img src={logo} class="img" alt=""/>

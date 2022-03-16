@@ -28,7 +28,7 @@ class Order extends Component{
           
         </tr>
         <tr>
-          <th scope='row'>cliker sur</th>
+          <th scope='row'>cliquer sur</th>
           <td colSpan={2}><button>commander</button></td>
           
         </tr>
